@@ -1,8 +1,15 @@
 package com.blz.EmployeePayrollService;
 
+import java.io.*;
+import java.nio.*;
 import java.util.*;
 
 public class EmployeePayrollService {
+
+	public enum IOService {
+		CONSOLE_IO, FILE_IO, DB_IO, REST_IO
+	}
+	
 	private List<EmployeePayrollData> EmployeePayrollList;
 
 	public EmployeePayrollService(List<EmployeePayrollData> EmployeePayrollList) {
