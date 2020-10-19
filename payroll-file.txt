@@ -1,0 +1,3 @@
+id= 1, name= prem, salary= 100000.0
+id= 2, name= chand, salary= 200000.0
+id= 3, name= bhanu, salary= 300000.0
