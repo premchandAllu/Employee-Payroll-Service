@@ -1,12 +1,13 @@
 package com.blz.EmployeePayrollService;
 
+
 import java.io.*;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.util.*;
 
 public class EmployeePayrollFileIOService {
-	private static String PAYROLL_FILE_NAME = "src/payroll-file.txt";
+	private static String PAYROLL_FILE_NAME = "src/main/payroll-file.txt";
 
 	public void writeData(List<EmployeePayrollData> employeePayrollList) {
 		StringBuffer employeeBuffer = new StringBuffer();
@@ -37,5 +38,16 @@ public class EmployeePayrollFileIOService {
 			e.printStackTrace();
 		}
 		return entries;
+	}
+
+	public List<EmployeePayrollData> readData() {
+		List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
+		try {
+			Files.lines(new File(PAYROLL_FILE_NAME).toPath()).map(line -> line.trim())
+					.forEach(line -> System.out.println(line));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return employeePayrollList;
 	}
 }
